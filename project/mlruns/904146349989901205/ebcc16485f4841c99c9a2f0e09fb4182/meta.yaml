@@ -1,0 +1,15 @@
+artifact_uri: file:///project/bioinformatics/WZhang_lab/s440820/Module_3_Yi/project/mlruns/904146349989901205/ebcc16485f4841c99c9a2f0e09fb4182/artifacts
+end_time: 1749009113782
+entry_point_name: ''
+experiment_id: '904146349989901205'
+lifecycle_stage: active
+run_id: ebcc16485f4841c99c9a2f0e09fb4182
+run_name: v1-openai
+run_uuid: ebcc16485f4841c99c9a2f0e09fb4182
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749009113578
+status: 3
+tags: []
+user_id: s440820
