@@ -1,0 +1,13 @@
+Saved → outputs/hop_tools_results.csv
+Saved → outputs/hop_tools_results.png
+   id                 task  ...     score success
+0   0  sequence gene alias  ...  0.000000    True
+1   1  sequence gene alias  ...  0.244792    True
+2   2  sequence gene alias  ...  0.000000    True
+3   3  sequence gene alias  ...  0.000000    True
+4   4  sequence gene alias  ...  0.000000    True
+
+[5 rows x 8 columns]
+🏃 View run v2-openai-llm-judge at: http://198.215.61.34:8153/#/experiments/3/runs/b4b9d4f2a7fc4e8eabefe747d86d7d37
+🧪 View experiment at: http://198.215.61.34:8153/#/experiments/3
+[MLflow Error] Logging failed: 'int' object has no attribute 'replace'

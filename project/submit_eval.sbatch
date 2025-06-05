@@ -6,11 +6,11 @@
 #SBATCH --nodes=1                     # 单节点
 #SBATCH --ntasks=1                    # 单任务
 #SBATCH --cpus-per-task=16
-#SBATCH --partition=512GB
+#SBATCH --partition=256GB
 
 
 # 激活 conda 环境
-source activate 
+source activate
 
 
 

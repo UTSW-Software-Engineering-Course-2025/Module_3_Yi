@@ -1,9 +1,10 @@
-from typing import List, Dict, Optional, Type, Any, Union  
+from typing import List, Dict, Optional, Type, Any, Union
 from openai import AzureOpenAI, OpenAI
 from pydantic import BaseModel
 from .config import ModelConfig
 from .tools import get_tools_definition, available_functions
 import json
+
 
 def query_llm(
     user_query: str,
@@ -11,7 +12,7 @@ def query_llm(
     examples: List[Dict[str, str]],
     cfg: ModelConfig,
     *,
-    pydantic_model: Optional[Type[BaseModel]] = None
+    pydantic_model: Optional[Type[BaseModel]] = None,
 ) -> str | BaseModel:
     """统一封装 Azure / OpenAI / Ollama 调用，返回纯文本或 Pydantic 对象。"""
     messages = (
@@ -48,6 +49,7 @@ def query_llm(
     resp = client.chat.completions.create(**base_args)
     return resp.choices[0].message.content.strip()
 
+
 def query_llm(
     user_query: str,
     system_prompt: str,
@@ -57,6 +59,8 @@ def query_llm(
     pydantic_model: Optional[Type[BaseModel]] = None,
 ) -> str | BaseModel:
     ...
+
+
 # ---------------------------------------------- #
 
 
@@ -118,7 +122,8 @@ def query_llm_with_tools(
             msg = resp.choices[0].message  # type: ignore[attr-defined]
 
         # 4) 若有 tool_calls → 执行本地函数并继续
-        if msg.tool_calls:                                   # type: List[ChatCompletionMessageToolCall]
+        tool_calls: List[str] = msg.tool_calls
+        if tool_calls:
             # 先把 assistant 的 tool_call 回显添加到 messages
             messages.append(
                 {
@@ -153,11 +158,11 @@ def query_llm_with_tools(
                         "role": "tool",
                         "tool_call_id": call.id,
                         "name": fn_name,
-                        "content": result,          # 直接是 str 或 dict 均可
+                        "content": result,  # 直接是 str 或 dict 均可
                     }
                 )
 
-            continue 
+            continue
         # 5) 没有 tool 调用，直接返回
         if pydantic_model:
             return msg.parsed  # type: ignore[attr-defined]

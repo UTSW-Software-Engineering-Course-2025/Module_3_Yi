@@ -6,6 +6,7 @@ from .utils import call_api
 NCBI_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
 API_KEY = "4877bf94b505d53e71f9abd0c1cba2c1d609"  # 记得在 .env 或 shell 中 export
 
+
 # ---------- 1. 查 UID ---------- #
 def search_gene_id(query_id: str) -> str:
     """

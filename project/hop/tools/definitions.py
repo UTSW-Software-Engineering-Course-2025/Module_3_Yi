@@ -37,7 +37,9 @@ def get_tools_definition() -> List[Dict[str, Collection[str]]]:
                 "description": "Get structured gene summary by UID.",
                 "parameters": {
                     "type": "object",
-                    "properties": {"uid": {"type": "string", "description": "Gene UID"}},
+                    "properties": {
+                        "uid": {"type": "string", "description": "Gene UID"}
+                    },
                     "required": ["uid"],
                 },
             },

@@ -69,3 +69,90 @@ def score(pred: Union[str, List[str]], gold: str, task: str, cfg: EvalConfig) ->
         return float(F.cosine_similarity(v[0], v[1], dim=0))
 
     return lev_sim(str(pred), str(gold))
+
+
+# ============score_based_llm_eval============
+from openai import AzureOpenAI
+from typing import Literal, Optional
+
+
+def score_based_llm(
+    question: str,
+    candidate: str,
+    rubric: str,
+    cfg,
+    gold: Optional[str] = None,
+    scale: Literal["1-5", "yes-no"] = "1-5",
+) -> dict:
+    """
+    Evaluate a candidate answer against a rubric (and optionally a gold standard) using LLM-as-a-judge.
+
+    Args:
+        question (str): The input or query.
+        candidate (str): The model's answer to evaluate.
+        rubric (str): Criteria for grading (clarity, factuality, etc.).
+        cfg (ModelConfig): Contains backend, API key, and deployment info.
+        gold (Optional[str]): Gold standard answer (optional).
+        scale (Literal): Output scoring format. Options: "1-5", "yes-no".
+
+    Returns:
+        dict: A dictionary with keys: "score", "explanation".
+    """
+    if cfg.model_backend != "azure":
+        raise ValueError("Only Azure backend is currently supported.")
+
+    client = AzureOpenAI(
+        api_key=cfg.openai_api_key,
+        azure_endpoint=cfg.openai_base_url,
+        api_version="2024-10-21",
+    )
+
+    gold_part = f"\n\nGold Standard Answer:\n{gold}" if gold else ""
+
+    prompt = f"""
+You are a domain expert grading an AI response.
+
+Question:
+{question}
+
+Candidate Answer:
+{candidate}
+{gold_part}
+
+Rubric:
+{rubric}
+
+Instructions:
+Score the candidate's answer on a scale of {scale} based on the rubric. Provide a justification for the score.
+Return your answer in this format:
+Score: <X>
+Explanation: <...>
+"""
+
+    response = client.chat.completions.create(
+        model=cfg.model_name,
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a meticulous evaluator following an academic grading rubric.",
+            },
+            {"role": "user", "content": prompt},
+        ],
+        temperature=0.2,
+    )
+
+    content = response.choices[0].message.content.strip()
+    lines = content.split("\n", 1)
+    result = {"score": None, "explanation": None}
+
+    for line in lines:
+        if line.lower().startswith("score:"):
+            result["score"] = line.split(":", 1)[1].strip()
+        elif line.lower().startswith("explanation:") or result["explanation"] is None:
+            result["explanation"] = (
+                line
+                if line.lower().startswith("explanation:")
+                else "Explanation: " + line
+            )
+
+    return result
