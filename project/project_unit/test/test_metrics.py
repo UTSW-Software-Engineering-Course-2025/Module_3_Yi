@@ -1,5 +1,5 @@
 import pytest
-from project.starter_geneturing.evaluation import (
+from project.project_unit.starter_geneturing.evaluation import (
     exact_match,
     human_genome_dna_alignment,
     gene_disease_association,

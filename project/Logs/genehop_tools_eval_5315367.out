@@ -1,0 +1,62 @@
+[Err] 100: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 101: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 102: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 103: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 104: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 105: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 106: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 107: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 108: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 109: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 110: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 111: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 112: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 113: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 114: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 115: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 116: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 117: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 118: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 119: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 120: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 121: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 122: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 123: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 124: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 125: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 126: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 127: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 128: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 129: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 130: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 131: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 132: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 133: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 134: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 135: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 136: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 137: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 138: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 139: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 140: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 141: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 142: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 143: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 144: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 145: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 146: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 147: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 148: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+[Err] 149: 403 Client Error: URLBlocked for url: http://198.215.61.34:8152/embed
+Saved → outputs/results.csv
+   id                 task  ... score success
+0   0  sequence gene alias  ...   0.0    True
+1   1  sequence gene alias  ...   0.0    True
+2   2  sequence gene alias  ...   0.0    True
+3   3  sequence gene alias  ...   0.0    True
+4   4  sequence gene alias  ...   0.0    True
+
+[5 rows x 8 columns]
+🏃 View run v2-openai-tools at: http://198.215.61.34:8153/#/experiments/3/runs/1770661c08d743359d15fb638469e34d
+🧪 View experiment at: http://198.215.61.34:8153/#/experiments/3
+[MLflow Error] Logging failed: 'int' object has no attribute 'replace'

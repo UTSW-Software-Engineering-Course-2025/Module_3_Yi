@@ -1,0 +1,75 @@
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/project/bioinformatics/WZhang_lab/s440820/Module_3_Yi/project/hop_example.py", line 2, in <module>
+    from hop.data_loader import load_genehop
+  File "/project/bioinformatics/WZhang_lab/s440820/Module_3_Yi/project/hop/data_loader.py", line 2, in <module>
+    import pandas as pd
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/api.py", line 28, in <module>
+    from pandas.core.arrays import Categorical
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/arrays/__init__.py", line 1, in <module>
+    from pandas.core.arrays.arrow import ArrowExtensionArray
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/arrays/arrow/__init__.py", line 5, in <module>
+    from pandas.core.arrays.arrow.array import ArrowExtensionArray
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/arrays/arrow/array.py", line 50, in <module>
+    from pandas.core import (
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/ops/__init__.py", line 8, in <module>
+    from pandas.core.ops.array_ops import (
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/ops/array_ops.py", line 56, in <module>
+    from pandas.core.computation import expressions
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/computation/expressions.py", line 21, in <module>
+    from pandas.core.computation.check import NUMEXPR_INSTALLED
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/computation/check.py", line 5, in <module>
+    ne = import_optional_dependency("numexpr", errors="warn")
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/compat/_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "/cm/shared/apps/python/3.11.x-anaconda/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/cm/shared/apps/python/3.11.x-anaconda/lib/python3.11/site-packages/numexpr/__init__.py", line 24, in <module>
+    from numexpr.interpreter import MAX_THREADS, use_vml, __BLOCK_SIZE1__
+AttributeError: _ARRAY_API not found
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/project/bioinformatics/WZhang_lab/s440820/Module_3_Yi/project/hop_example.py", line 2, in <module>
+    from hop.data_loader import load_genehop
+  File "/project/bioinformatics/WZhang_lab/s440820/Module_3_Yi/project/hop/data_loader.py", line 2, in <module>
+    import pandas as pd
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/api.py", line 28, in <module>
+    from pandas.core.arrays import Categorical
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/arrays/__init__.py", line 1, in <module>
+    from pandas.core.arrays.arrow import ArrowExtensionArray
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/arrays/arrow/__init__.py", line 5, in <module>
+    from pandas.core.arrays.arrow.array import ArrowExtensionArray
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/arrays/arrow/array.py", line 64, in <module>
+    from pandas.core.arrays.masked import BaseMaskedArray
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/arrays/masked.py", line 60, in <module>
+    from pandas.core import (
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/core/nanops.py", line 52, in <module>
+    bn = import_optional_dependency("bottleneck", errors="warn")
+  File "/home2/s440820/.local/lib/python3.11/site-packages/pandas/compat/_optional.py", line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "/cm/shared/apps/python/3.11.x-anaconda/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/cm/shared/apps/python/3.11.x-anaconda/lib/python3.11/site-packages/bottleneck/__init__.py", line 7, in <module>
+    from .move import (move_argmax, move_argmin, move_max, move_mean, move_median,
+AttributeError: _ARRAY_API not found
+GeneHop:   0%|          | 0/150 [00:00<?, ?it/s]GeneHop:   1%|          | 1/150 [01:00<2:30:00, 60.41s/it]GeneHop:   1%|▏         | 2/150 [02:07<2:38:34, 64.28s/it]GeneHop:   2%|▏         | 3/150 [02:54<2:18:18, 56.45s/it]GeneHop:   3%|▎         | 4/150 [03:45<2:12:09, 54.31s/it]GeneHop:   3%|▎         | 5/150 [04:39<2:10:33, 54.03s/it]GeneHop:   4%|▍         | 6/150 [05:25<2:03:08, 51.31s/it]GeneHop:   5%|▍         | 7/150 [06:04<1:53:09, 47.48s/it]GeneHop:   5%|▌         | 8/150 [06:54<1:54:25, 48.35s/it]GeneHop:   6%|▌         | 9/150 [15:08<7:21:01, 187.67s/it]GeneHop:   7%|▋         | 10/150 [16:15<5:50:48, 150.35s/it]GeneHop:   7%|▋         | 11/150 [17:04<4:36:30, 119.36s/it]GeneHop:   8%|▊         | 12/150 [17:51<3:43:45, 97.29s/it] GeneHop:   9%|▊         | 13/150 [18:41<3:09:17, 82.90s/it]GeneHop:   9%|▉         | 14/150 [19:33<2:46:52, 73.62s/it]GeneHop:  10%|█         | 15/150 [20:31<2:35:06, 68.94s/it]GeneHop:  11%|█         | 16/150 [35:29<11:50:52, 318.30s/it]GeneHop:  11%|█▏        | 17/150 [36:58<9:12:55, 249.44s/it] GeneHop:  12%|█▏        | 18/150 [37:55<7:01:49, 191.74s/it]GeneHop:  13%|█▎        | 19/150 [38:43<5:24:15, 148.52s/it]GeneHop:  13%|█▎        | 20/150 [39:54<4:31:24, 125.26s/it]GeneHop:  14%|█▍        | 21/150 [40:42<3:39:34, 102.13s/it]GeneHop:  15%|█▍        | 22/150 [41:30<3:02:56, 85.76s/it] GeneHop:  15%|█▌        | 23/150 [43:28<3:22:09, 95.51s/it]GeneHop:  16%|█▌        | 24/150 [44:09<2:45:47, 78.95s/it]GeneHop:  17%|█▋        | 25/150 [44:56<2:25:00, 69.60s/it]GeneHop:  17%|█▋        | 26/150 [45:45<2:10:39, 63.22s/it]GeneHop:  18%|█▊        | 27/150 [46:32<1:59:46, 58.43s/it]GeneHop:  19%|█▊        | 28/150 [47:20<1:52:36, 55.38s/it]GeneHop:  19%|█▉        | 29/150 [48:32<2:01:33, 60.27s/it]GeneHop:  20%|██        | 30/150 [49:14<1:49:27, 54.73s/it]GeneHop:  21%|██        | 31/150 [50:00<1:43:30, 52.18s/it]GeneHop:  21%|██▏       | 32/150 [50:47<1:39:24, 50.55s/it]GeneHop:  22%|██▏       | 33/150 [51:32<1:35:47, 49.12s/it]GeneHop:  23%|██▎       | 34/150 [52:19<1:33:15, 48.24s/it]GeneHop:  23%|██▎       | 35/150 [53:06<1:31:47, 47.89s/it]GeneHop:  24%|██▍       | 36/150 [53:48<1:27:57, 46.30s/it]GeneHop:  25%|██▍       | 37/150 [54:37<1:28:39, 47.08s/it]GeneHop:  25%|██▌       | 38/150 [55:26<1:28:57, 47.65s/it]GeneHop:  26%|██▌       | 39/150 [56:24<1:33:32, 50.57s/it]GeneHop:  27%|██▋       | 40/150 [57:09<1:29:53, 49.03s/it]GeneHop:  27%|██▋       | 41/150 [57:48<1:23:53, 46.18s/it]GeneHop:  28%|██▊       | 42/150 [58:40<1:26:03, 47.81s/it]GeneHop:  29%|██▊       | 43/150 [59:24<1:23:03, 46.57s/it]GeneHop:  29%|██▉       | 44/150 [1:01:03<1:50:14, 62.40s/it]GeneHop:  30%|███       | 45/150 [1:01:52<1:42:08, 58.37s/it]GeneHop:  31%|███       | 46/150 [1:03:01<1:46:49, 61.63s/it]GeneHop:  31%|███▏      | 47/150 [1:03:51<1:39:44, 58.10s/it]GeneHop:  32%|███▏      | 48/150 [1:04:35<1:31:25, 53.78s/it]GeneHop:  33%|███▎      | 49/150 [1:05:17<1:24:25, 50.15s/it]GeneHop:  33%|███▎      | 50/150 [1:06:07<1:23:32, 50.13s/it]GeneHop:  34%|███▍      | 51/150 [1:06:13<1:00:52, 36.89s/it]GeneHop:  35%|███▍      | 52/150 [1:06:21<46:10, 28.27s/it]  GeneHop:  35%|███▌      | 53/150 [1:06:26<34:36, 21.41s/it]GeneHop:  36%|███▌      | 54/150 [1:06:31<26:29, 16.56s/it]GeneHop:  37%|███▋      | 55/150 [1:06:37<21:00, 13.27s/it]GeneHop:  37%|███▋      | 56/150 [1:06:42<17:01, 10.86s/it]GeneHop:  38%|███▊      | 57/150 [1:06:46<13:41,  8.83s/it]GeneHop:  39%|███▊      | 58/150 [1:06:52<12:08,  7.92s/it]GeneHop:  39%|███▉      | 59/150 [1:07:01<12:26,  8.21s/it]GeneHop:  40%|████      | 60/150 [1:07:06<10:42,  7.14s/it]GeneHop:  41%|████      | 61/150 [1:07:12<10:14,  6.90s/it]GeneHop:  41%|████▏     | 62/150 [1:07:19<10:07,  6.90s/it]GeneHop:  42%|████▏     | 63/150 [1:07:28<10:57,  7.56s/it]GeneHop:  43%|████▎     | 64/150 [1:07:33<09:46,  6.82s/it]GeneHop:  43%|████▎     | 65/150 [1:07:39<09:17,  6.56s/it]GeneHop:  44%|████▍     | 66/150 [1:07:49<10:34,  7.55s/it]GeneHop:  45%|████▍     | 67/150 [1:08:07<14:50, 10.73s/it]GeneHop:  45%|████▌     | 68/150 [1:08:17<14:20, 10.49s/it]GeneHop:  46%|████▌     | 69/150 [1:08:24<12:47,  9.47s/it]GeneHop:  47%|████▋     | 70/150 [1:08:30<11:23,  8.54s/it]GeneHop:  47%|████▋     | 71/150 [1:08:36<10:04,  7.65s/it]GeneHop:  48%|████▊     | 72/150 [1:08:41<08:58,  6.90s/it]GeneHop:  49%|████▊     | 73/150 [1:08:47<08:15,  6.44s/it]GeneHop:  49%|████▉     | 74/150 [1:08:51<07:33,  5.96s/it]GeneHop:  50%|█████     | 75/150 [1:08:57<07:25,  5.94s/it]GeneHop:  51%|█████     | 76/150 [1:09:05<07:57,  6.45s/it]GeneHop:  51%|█████▏    | 77/150 [1:09:09<07:03,  5.80s/it]GeneHop:  52%|█████▏    | 78/150 [1:09:25<10:43,  8.93s/it]GeneHop:  53%|█████▎    | 79/150 [1:09:34<10:35,  8.95s/it]GeneHop:  53%|█████▎    | 80/150 [1:09:42<09:58,  8.54s/it]GeneHop:  54%|█████▍    | 81/150 [1:09:48<08:53,  7.73s/it]GeneHop:  55%|█████▍    | 82/150 [1:09:54<08:18,  7.33s/it]GeneHop:  55%|█████▌    | 83/150 [1:10:07<09:53,  8.85s/it]GeneHop:  56%|█████▌    | 84/150 [1:10:12<08:41,  7.90s/it]GeneHop:  57%|█████▋    | 85/150 [1:10:24<09:39,  8.91s/it]GeneHop:  57%|█████▋    | 86/150 [1:10:30<08:46,  8.23s/it]GeneHop:  58%|█████▊    | 87/150 [1:10:35<07:28,  7.12s/it]GeneHop:  59%|█████▊    | 88/150 [1:10:42<07:14,  7.01s/it]GeneHop:  59%|█████▉    | 89/150 [1:10:45<06:05,  5.99s/it]GeneHop:  60%|██████    | 90/150 [1:10:52<06:07,  6.12s/it]GeneHop:  61%|██████    | 91/150 [1:10:57<05:45,  5.86s/it]GeneHop:  61%|██████▏   | 92/150 [1:11:01<05:14,  5.43s/it]GeneHop:  62%|██████▏   | 93/150 [1:11:10<06:03,  6.37s/it]GeneHop:  63%|██████▎   | 94/150 [1:11:14<05:22,  5.77s/it]GeneHop:  63%|██████▎   | 95/150 [1:11:24<06:30,  7.11s/it]GeneHop:  64%|██████▍   | 96/150 [1:11:30<06:00,  6.68s/it]GeneHop:  65%|██████▍   | 97/150 [1:11:43<07:28,  8.46s/it]GeneHop:  65%|██████▌   | 98/150 [1:11:53<07:52,  9.09s/it]GeneHop:  66%|██████▌   | 99/150 [1:11:58<06:34,  7.73s/it]GeneHop:  67%|██████▋   | 100/150 [1:12:06<06:27,  7.74s/it]GeneHop:  67%|██████▋   | 101/150 [1:12:10<05:26,  6.66s/it]GeneHop:  68%|██████▊   | 102/150 [1:12:15<05:00,  6.26s/it]GeneHop:  69%|██████▊   | 103/150 [1:12:20<04:36,  5.89s/it]GeneHop:  69%|██████▉   | 104/150 [1:12:24<04:02,  5.27s/it]GeneHop:  70%|███████   | 105/150 [1:12:29<03:50,  5.12s/it]GeneHop:  71%|███████   | 106/150 [1:12:33<03:29,  4.77s/it]GeneHop:  71%|███████▏  | 107/150 [1:12:38<03:27,  4.82s/it]GeneHop:  72%|███████▏  | 108/150 [1:12:41<03:06,  4.44s/it]GeneHop:  73%|███████▎  | 109/150 [1:12:46<03:02,  4.45s/it]GeneHop:  73%|███████▎  | 110/150 [1:12:50<02:51,  4.29s/it]GeneHop:  74%|███████▍  | 111/150 [1:12:54<02:46,  4.26s/it]GeneHop:  75%|███████▍  | 112/150 [1:12:57<02:25,  3.83s/it]GeneHop:  75%|███████▌  | 113/150 [1:13:00<02:17,  3.72s/it]GeneHop:  76%|███████▌  | 114/150 [1:13:04<02:14,  3.74s/it]GeneHop:  77%|███████▋  | 115/150 [1:13:07<02:09,  3.71s/it]GeneHop:  77%|███████▋  | 116/150 [1:13:12<02:13,  3.91s/it]GeneHop:  78%|███████▊  | 117/150 [1:13:17<02:26,  4.43s/it]GeneHop:  79%|███████▊  | 118/150 [1:13:21<02:13,  4.17s/it]GeneHop:  79%|███████▉  | 119/150 [1:13:24<02:00,  3.90s/it]GeneHop:  80%|████████  | 120/150 [1:13:29<02:01,  4.04s/it]GeneHop:  81%|████████  | 121/150 [1:13:33<01:56,  4.01s/it]GeneHop:  81%|████████▏ | 122/150 [1:13:37<01:53,  4.04s/it]GeneHop:  82%|████████▏ | 123/150 [1:13:41<01:51,  4.15s/it]GeneHop:  83%|████████▎ | 124/150 [1:13:45<01:42,  3.93s/it]GeneHop:  83%|████████▎ | 125/150 [1:13:48<01:35,  3.82s/it]GeneHop:  84%|████████▍ | 126/150 [1:13:51<01:26,  3.59s/it]GeneHop:  85%|████████▍ | 127/150 [1:13:55<01:26,  3.75s/it]GeneHop:  85%|████████▌ | 128/150 [1:14:01<01:32,  4.21s/it]GeneHop:  86%|████████▌ | 129/150 [1:14:05<01:28,  4.22s/it]GeneHop:  87%|████████▋ | 130/150 [1:14:08<01:18,  3.94s/it]GeneHop:  87%|████████▋ | 131/150 [1:14:12<01:12,  3.80s/it]GeneHop:  88%|████████▊ | 132/150 [1:14:16<01:14,  4.12s/it]GeneHop:  89%|████████▊ | 133/150 [1:14:20<01:08,  4.06s/it]GeneHop:  89%|████████▉ | 134/150 [1:14:25<01:05,  4.11s/it]GeneHop:  90%|█████████ | 135/150 [1:14:28<00:57,  3.83s/it]GeneHop:  91%|█████████ | 136/150 [1:14:31<00:52,  3.75s/it]GeneHop:  91%|█████████▏| 137/150 [1:14:35<00:49,  3.82s/it]GeneHop:  92%|█████████▏| 138/150 [1:14:40<00:50,  4.17s/it]GeneHop:  93%|█████████▎| 139/150 [1:14:43<00:41,  3.73s/it]GeneHop:  93%|█████████▎| 140/150 [1:14:47<00:38,  3.88s/it]GeneHop:  94%|█████████▍| 141/150 [1:14:52<00:36,  4.05s/it]GeneHop:  95%|█████████▍| 142/150 [1:14:56<00:32,  4.06s/it]GeneHop:  95%|█████████▌| 143/150 [1:15:00<00:29,  4.15s/it]GeneHop:  96%|█████████▌| 144/150 [1:15:03<00:23,  3.84s/it]GeneHop:  97%|█████████▋| 145/150 [1:15:07<00:19,  3.92s/it]GeneHop:  97%|█████████▋| 146/150 [1:15:12<00:16,  4.05s/it]GeneHop:  98%|█████████▊| 147/150 [1:15:16<00:12,  4.10s/it]GeneHop:  99%|█████████▊| 148/150 [1:15:21<00:09,  4.54s/it]GeneHop:  99%|█████████▉| 149/150 [1:15:26<00:04,  4.68s/it]GeneHop: 100%|██████████| 150/150 [1:15:31<00:00,  4.50s/it]GeneHop: 100%|██████████| 150/150 [1:15:31<00:00, 30.21s/it]

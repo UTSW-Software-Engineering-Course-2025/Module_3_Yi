@@ -6,10 +6,11 @@ from collections import defaultdict
 
 from .config import DataConfig, ModelConfig, EvalConfig
 from .data_loader import load_genehop
-from .model_client import query_llm
+from .model_client import query_llm, query_llm_with_tools
 from .processing import clean_answer
 from .metrics import score as score_fn
 from typing import Union, Optional, List, Any
+
 
 
 @dataclass
@@ -30,14 +31,16 @@ def evaluate(
     eval_cfg: EvalConfig,
     system_prompt: str,
     examples: List[Dict[str, str]],
+    use_tools: bool = False
 ) -> pd.DataFrame:
     df = load_genehop(data_cfg)
+    llm_fn = query_llm_with_tools if use_tools else query_llm
     results: List[Result] = []
     task_scores: Dict[str, List[float]] = defaultdict(list)
 
     for idx, row in tqdm(df.iterrows(), total=len(df), desc="GeneHop"):
         try:
-            raw = query_llm(
+            raw = llm_fn(
                 user_query=row["question"],
                 system_prompt=system_prompt,
                 examples=examples,
